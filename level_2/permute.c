@@ -19,6 +19,21 @@ void print(char *s)
 	write(1, "\n", 1);
 }
 
+void sort(char *s)
+{
+	int i;
+	int j;
+
+	for (i = 0; s[i]; i++)
+	{
+		for (j = i + 1; s[j]; j++)
+		{
+			if (s[i] > s[j])
+				swap(&s[i], &s[j]);
+		}
+	}
+}
+
 void permute(char *s, int start)
 {
 	if (!s[start])

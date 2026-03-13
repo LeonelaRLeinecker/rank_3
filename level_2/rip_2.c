@@ -24,12 +24,16 @@ int invalid(char *s)
 
 void result(char *s, int remove, int del, int pos)
 {
-	if (remove == del && !invalid(s))
+	if (del > remove)
+		return;
+
+	if (remove == del)
 	{
-		puts(s);
+		if (!invalid(s))
+			puts(s);
 		return;
 	}
-	while(s[pos])
+	/*while(s[pos])
 	{
 		if (s[pos] == '(' || s[pos] == ')')
 		{
@@ -39,6 +43,17 @@ void result(char *s, int remove, int del, int pos)
 			s[pos] = c;
 		}
 		pos++;
+	}*/
+	for (int i = pos; s[i]; i++)
+	{
+		if (s[i] != '(' && s[i] != ')')
+			continue;
+		if (s[i] != pos && s[i] == s[i-1])
+			continue;
+		char c = s[i];
+		s[i] = ' ';
+		result(s, remove, del + 1, i + 1);
+		s[i] = c;
 	}	
 }
 

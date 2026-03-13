@@ -58,6 +58,8 @@ int main(int argc, char **argv)
 	{
 		int n = atoi(argv[1]);
 		int *board = malloc(sizeof(int) * n);
+		if (!board)
+			return 1;
 		solve(board, 0, n);
 		free(board);
 	}

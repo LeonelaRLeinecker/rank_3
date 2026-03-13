@@ -6,7 +6,7 @@
 /*   By: lleineck <lleineck@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 18:28:32 by lleineck          #+#    #+#             */
-/*   Updated: 2026/03/10 19:52:24 by lleineck         ###   ########.fr       */
+/*   Updated: 2026/03/13 19:54:52 by lleineck         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	solve(int *set, int n, int target, int index, int *subset, int size, int su
 
 int main(int argc, char **argv)
 {
-	if (argc < 2)
+	if (argc < 3)
 		return 0;
 	int target = atoi(argv[1]);
 	int n = argc - 2;
