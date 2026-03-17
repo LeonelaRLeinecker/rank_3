@@ -43,9 +43,10 @@ void permute(char *s, int start)
 	}
 	for (int i = start; s[i]; i++)
 	{
-		swap(&s[start], &s[i]);
+		//swap(&s[start], &s[i]);
 		permute(s, start + 1);
 		swap(&s[start], &s[i]);
+
 	}
 
 }
@@ -54,6 +55,7 @@ int main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
+		sort(argv[1]);
 		permute(argv[1], 0);
 	}
 	return 0;
